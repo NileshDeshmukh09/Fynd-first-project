@@ -1,0 +1,18 @@
+{
+  "name": "workshop-app",
+  "version": "1.0.0",
+  "description": "This is my Fist project at FYND",
+  "main": "index.js",
+  "scripts": {
+    "copy": "cpx \"./node_modules/normalize.css/normalize.css\" \"public/external\"",
+    "start": "live-server --mount=/:public/ --open=index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cpx": "^1.5.0",
+    "live-server": "^1.2.2",
+    "normalize.css": "^8.0.1"
+  }
+}
