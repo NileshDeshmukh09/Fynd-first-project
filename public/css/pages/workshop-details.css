@@ -1,0 +1,67 @@
+.workshop-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.workshop-image-wrapper,
+.workshop-content {
+    flex-basis: 100%;
+    margin-bottom: 1em;
+}
+
+.workshop-content-details {
+    display: flex;
+    width: 50%;
+}
+
+.workshop-content-details > * {
+    flex: 0 0 50%;
+}
+
+.sessions-list-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5em;
+    background-color: rgb(230, 194, 136);
+    border: 1px solid ;
+    border-bottom: 0;
+}
+
+.sessions-list > :last-child {
+    border-bottom: 1px solid #eee;
+}
+
+.voting-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75px;
+}
+
+.session-details {
+    flex-grow: 1;
+    background: rgb(73, 152, 201);
+    flex-basis: auto;
+}
+
+.fa-caret-up,
+.fa-caret-down {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.fa-caret-up:hover,
+.fa-caret-down:hover {
+    color: blue;
+}
+
+@media ( min-width: 1000px ) {
+    .workshop-image-wrapper {
+        flex-basis: 33%;
+    }
+
+    .workshop-content {
+        flex-basis: 66%;
+    }
+}

@@ -1,0 +1,34 @@
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.form-group label,
+.form-group input,
+.form-group select,
+.form-group textarea {
+    flex-basis: 100%;
+    margin: 0.25em 0;
+    font-size: 1.2em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.5em;
+}
+
+@media ( min-width: 1000px ) {
+    .form-group label {
+        flex: 0 0 20%;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        flex: 0 0 78%;
+    }
+}

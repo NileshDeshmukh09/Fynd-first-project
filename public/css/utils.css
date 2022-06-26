@@ -9,6 +9,10 @@
     color: initial;
 }
 
+.img-responsive {
+    width: 100%;
+}
+
 .container {
     width: 80%;
     max-width: 1200px;
@@ -33,4 +37,33 @@
 
 .text-right {
     text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 0.75em;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.btn-primary {
+    background-color: navy;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #800;
+    color: white;
+}
+
+@media ( max-width: 600px ) {
+    .d-sm-none {
+        display: none;
+    }
+}
+
+@media ( min-width: 600px ) {
+    .d-lg-none {
+        display: none;
+    }
 }

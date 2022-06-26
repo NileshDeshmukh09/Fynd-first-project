@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Workshops Details | Workshops App</title>
+        <link rel="stylesheet" href="/external/normalize.css/normalize.css">
+        <link rel="stylesheet" href="/external/@fortawesome/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="/css/utils.css">
+        <link rel="stylesheet" href="/css/form.css">
+        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/nav.css">
+        <link rel="stylesheet" href="/css/pages/workshop-details.css">
+    </head>
+    <body>
+        <nav>
+            <ul class="list-unstyled menu container">
+                <li class="d-lg-none text-right">
+                    <button id="menu-button">Menu</button>
+                </li>
+                <li class="nav-items d-sm-none">
+                    <a href="/" class="link-plain">Home</a>
+                </li>
+                <li class="nav-items nav-items-selected d-sm-none">
+                    <a href="/workshops-list.html" class="link-plain">Workshops List</a>
+                </li>
+                <li class="nav-items d-sm-none">
+                    <a href="" class="link-plain">Add a workshop</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="container mt-3 mb-3">
+            <section>
+                <h1>React JS</h1>
+                <hr />
+                <div class="workshop-details">
+                    <div class="workshop-image-wrapper">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png" alt="React JS" class="img-responsive" />
+                    </div>
+                    <div class="workshop-content">
+                        <div class="workshop-content-details">
+                            <div class="workshop-date-and-time">
+                                <div class="workshop-date">
+                                    Jan 14, 2019 - Jan 16, 2019
+                                </div>
+                                <div class="workshop-time">
+                                    10:00 am - 6:00 pm
+                                </div>
+                            </div>
+                            <div class="workshop-modes">
+                                <div>
+                                    <i class="fa-solid fa-check"></i>
+                                    In person
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-xmark"></i>
+                                    Online
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workshop-description">
+                            <p>
+                                React (also known as React.js or ReactJS) is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies.
+                            </p>
+
+                            <p>
+                                React can be used as a base in the development of single-page or mobile applications. Complex React applications usually require the use of additional libraries for state management, routing, and interaction with an API.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <a href="/workshop-details-add-session.html" class="link-plain btn btn-secondary">List of session</a>
+
+            <section class="add-session">
+                <h2>Add a session</h2>
+                <hr />
+                <form>
+                    <div class="form-group mb-3">
+                        <label for="sequence-id">Sequence ID</label>
+                        <input type="number" id="sequence-id" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="sequence-id">Sequence ID</label>
+                        <input type="number" id="sequence-id" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="sequence-id">Sequence ID</label>
+                        <input type="number" id="sequence-id" />
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <script src="/js/nav.js"></script>
+    </body>
+</html>

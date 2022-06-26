@@ -1,0 +1,31 @@
+.workshops-list {
+    display: grid;
+    grid-template-rows: repeat( 12, 360px );
+    grid-template-columns: repeat( 1, auto );
+    grid-auto-rows: 360px;
+    gap: 2em 2em;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.workshops-list .img-workshop {
+    width: 50%;
+}
+
+@media ( min-width : 1000px ) {
+    .workshops-list {
+        grid-template-rows: repeat( 4, 360px );
+        grid-template-columns: repeat( 3, 30% );
+    }
+}
+
+.workshops-list-item {
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.workshops-list-item:hover {
+    box-shadow: 0px 0px 3px 3px gold;
+}
