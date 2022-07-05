@@ -12,6 +12,26 @@
     width: 50%;
 }
 
+.alert{
+    padding: 0.75em 1em;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.alert-primary {
+    border-color : navy;
+    background-color: rgb(28, 106, 158);
+}
+
+.alert-danger {
+    border-color : rgb(231, 62, 24);
+    background-color: #fcc;
+}
+
+.d-none {
+    
+}
+
 @media ( min-width : 1000px ) {
     .workshops-list {
         grid-template-rows: repeat( 4, 360px );
