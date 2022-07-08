@@ -56,6 +56,27 @@
     color: white;
 }
 
+.alert {
+    padding: 0.75em 1em;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.alert-primary {
+    border-color: navy;
+    background-color: rgb( 32, 128, 255 );
+    color: white;
+}
+
+.alert-danger {
+    border-color: #800;
+    background-color: #fcc;
+}
+
+.d-none {
+    display: none;
+}
+
 @media ( max-width: 600px ) {
     .d-sm-none {
         display: none;
