@@ -1,18 +1,6 @@
-console.log("HII , this is workshops list");
+import { fetchWorkshops } from '../services/workshops.js';
 
-const fetchWorkshops = async ()=> {
-    const response = await fetch(`https://workshops-server.herokuapp.com/workshop`);
-
-        /* 
-            Take care of cases when BACKEND Returns - we need to throw the error from this function ourselves 
-        */
-        if( !response.ok ){ 
-            const responseText = await response.text(); //  get the text error message from the backend
-            throw new Error( responseText || "Some Error Occured ");
-        }
-    const workshops = await response.json();
-    return workshops;
-}
+let page = 1;
 
 const showWorkshops = async ( workshops ) => {
     const workshopsListEl = document.querySelector('.workshops-list');
@@ -49,32 +37,73 @@ const showWorkshops = async ( workshops ) => {
         
     }
     )
-    console.log( workshopsListStr );
+    // console.log( workshopsListStr );
     workshopsListEl.innerHTML += workshopsListStr;
 }
 
-window.addEventListener('load', async function(){
+const fetchAndShowWorkshops =async () => {
     try{
-
         const workshops = await fetchWorkshops();
         showWorkshops(workshops);
-
-    }catch(err){
-
+    }
+    catch(err){
         const errorMessage = document.getElementById( 'error-message');
         errorMessage.classList.remove('d-none'); 
         errorMessage.textContent = err.message;
 
     }
 
-
     // hide the loading message Now ...
     const loadingMessage = document.getElementById( 'loading-message');
     loadingMessage.classList.add( 'd-none' );
+};
 
-    
-})
 
+// window.addEventListener('load', async function(){
+/**
+ * DOMContentLoaded fires when the DOM is ready ( happens before load event ),
+ * does not wait for all the content of the Page is Load only waiting for DOM load.
+ * 
+ * Load : will wait for the HTML loading and CSS LoaDing on the webpage  , so 
+ * it takes a much time 
+ * 
+ * DOMContentLoad : it will wait for only HTML loading and , Dom content load does not wait for CSS loading it
+ * start fucntioning as the DOM is ready  ( ***** IMP Interview Question ****** [ load vs DOMContentL oad])
+*/
+
+window.addEventListener('DOMContentLoaded',  function(){
+    // *** IMP ***
+    /* 
+    This will not be able to select the workshops list items element , becouse
+    it does not exist right now
+    */
+   // document.querySelector( '.workshops-list-item' );
+
+    setupPagination();
+    fetchAndShowWorkshops()
+        .then(()=> {
+            // RUns after the fetchAndShowWorkshops() complete execution
+            console.log('first workshop-list item = ', document.querySelector( ".workshops-list-item" ));
+        }) ;
+});
+
+const setupPagination = () => {
+
+     /* Yay ! DOM is ready! */
+
+    const nextpageBtn = document.getElementById( 'next-page' );
+    const previousPageBtn = document.getElementById( 'previous-page' );
+
+    nextpageBtn.addEventListener('click' , function(){
+        page = page +1;
+        fetchAndShowWorkshops();
+    });
+
+    previousPageBtn.addEventListener('click' , function(){
+        page = page-1; 
+        fetchAndShowWorkshops();
+    });
+}
 
 
 
